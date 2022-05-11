@@ -86,24 +86,21 @@ jobs:
   # Exercise: Config and Deployment
   configure_infrastructure: 
     docker:
-      - image: cimg/python:3.10.4
+      - image: python:3.7-alpine3.11
     steps:
       - checkout
       - add_ssh_keys:
+      
           fingerprints: ["d3:cc:29:46:f5:5d:f9:ec:32:41:a0:14:98:c5:52:b2"] # You can get this ID in the section where you registered the SSH Key
       - run:
           name: Install Ansible
           command: |
             # install the dependencies needed for your playbook
-            pip uninstall ansible
-            pip install ansible
-          #apk add --update ansible
-          
-            
+            apk add --update ansible 
       - run:
           name: Run Playbook and Configure server
           command: |
-           ansible-playbook -i inventory.txt main.yml --private-key udacity.pem
+            ansible-playbook -i inventory.txt main.yml
 
   # Exercise: Smoke Testin
   smoke_test:
