@@ -95,9 +95,10 @@ jobs:
           name: Install Ansible
           command: |
             # install the dependencies needed for your playbook
-            sudo python get-pip.py
-            sudo python -m pip install ansible
-            
+            pip uninstall ansible
+            pip install ansible
+
+
 
            # apk add --update ansible
             
