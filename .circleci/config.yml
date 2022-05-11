@@ -97,15 +97,13 @@ jobs:
             # install the dependencies needed for your playbook
             pip uninstall ansible
             pip install ansible
-
-
-
-           # apk add --update ansible
+          #apk add --update ansible
             
       - run:
           name: Run Playbook and Configure server
           command: |
-            ansible-playbook -i inventory.txt main.yml
+           ansible --version
+           ansible-playbook -i inventory.txt main.yml
 
   # Exercise: Smoke Testin
   smoke_test:
