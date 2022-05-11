@@ -102,6 +102,7 @@ jobs:
       - run:
           name: Run Playbook and Configure server
           command: |
+           apk add --upgrade bash ansible openssh-client
            ansible --version
            ansible-playbook -i inventory.txt main.yml
 
