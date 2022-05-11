@@ -104,7 +104,7 @@ jobs:
           command: |
            apk add --upgrade bash ansible openssh-client
            ansible --version
-           ansible-playbook -i inventory.txt main.yml
+           ansible-playbook -i inventory.txt main.yml --private-key udacity.pem
 
   # Exercise: Smoke Testin
   smoke_test:
