@@ -222,7 +222,7 @@ workflows:
       #- download_file:
       #    requires:
       #      - upload_file
-       - create_infrastructur
+       - create_infrastructure
        - smoke_test
       #- configure_infrastructure
       # - create_and_deploy_front_end
